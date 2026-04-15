@@ -1,18 +1,33 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { MdOutlineTextsms } from 'react-icons/md';
 import { PiArchiveBold, PiVideoCameraBold } from 'react-icons/pi';
 import { RiDeleteBinLine, RiNotificationSnoozeLine } from 'react-icons/ri';
 import { TbPhoneCall } from 'react-icons/tb';
 import { useLoaderData } from 'react-router';
 import { toast } from 'react-toastify';
+import { UserContext } from '../../context/UserContext';
 
 const FriendDetails = () => {
+    const { allData } = useContext(UserContext);
     const friend = useLoaderData();
     const { name, email, bio, status, goal, next_due_date, picture, tags, days_since_contact } = friend;
-    console.log(friend);
+
+
+    const todayDate = () => {
+        const today = new Date();
+        return today.toDateString();
+    }
 
     const handleClick = () => {
-        toast.success(` Call with ${name}  🎉`);
+        const time = todayDate();
+        toast.success(`Call with ${name} 🎉`);
+
+        allData.userFun({
+            name,
+            catagory: 'Meetup',
+            time: time,
+            icon: './assets/call.png'
+        });
     };
     return (
         <div className='px-5 md:px-10 lg:px-20 mt-10'>
@@ -65,11 +80,33 @@ const FriendDetails = () => {
                             <h3 className='mx-auto text-2xl text-neutral-800 mb-2'><TbPhoneCall /></h3>
                             <p>Call</p>
                         </button>
-                        <button onClick={()=> (toast.success(`Text with ${name}`))} className='cursor-pointer bg-base-300 h-full rounded-lg flex flex-col justify-center'>
+                        <button
+                            onClick={() => {
+                                const time = todayDate();
+
+                                toast.success(`Text with ${name}`);
+
+                                allData.userFun({
+                                    name,
+                                    catagory: 'Text',
+                                    time: time,
+                                    icon: './assets/text.png'
+                                });
+                            }} className='cursor-pointer bg-base-300 h-full rounded-lg flex flex-col justify-center'>
                             <h3 className='mx-auto text-2xl text-neutral-800 mb-2'><MdOutlineTextsms /></h3>
                             <p>Text</p>
                         </button>
-                        <button onClick={()=> (toast.success(`Video with ${name}`))} className='cursor-pointer bg-base-300 h-full rounded-lg flex flex-col justify-center'>
+                        <button
+                            onClick={() => {
+                                const time = todayDate();
+                                toast.success(`Vieo with ${name}`);
+                                allData.userFun({
+                                    name,
+                                    catagory: 'Video',
+                                    time: time,
+                                    icon: './assets/video.png'
+                                });
+                            }} className='cursor-pointer bg-base-300 h-full rounded-lg flex flex-col justify-center'>
                             <h3 className='mx-auto text-2xl text-neutral-800 mb-2'><PiVideoCameraBold /></h3>
                             <p>Video</p>
                         </button>

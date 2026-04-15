@@ -1,12 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
+import { UserContext } from '../context/UserContext';
 
 const Timeline = () => {
-  const [time, setTime] = useState('');
-  const todayDate = () => {
-    const today = new Date();
-    const formattedDate = today.toDateString();
-    setTime(formattedDate);
-  }
+  const { allData } = useContext(UserContext);
+  const users = allData.userData;
+  console.log(users)
+
   return (
     <div className='px-5 md:px-10 lg:px-20'>
       <h1 className='text-5xl font-semibold'>Timeline</h1>
@@ -18,9 +17,20 @@ const Timeline = () => {
           <option>System</option>
         </select>
       </div>
-      <button
-        onClick={() => {todayDate()}} className='btn btn-ghest bg-accent mb-4'>Today Time</button>
-      <p>{time}</p>
+      <div>
+        {users.map((user, index) => (
+          <div key={index}>
+            <div className='flex flex-col gap-5 mb-5'>
+              <div className='flex gap-4 justify-start items-center bg-base-100 px-5 py-5 rounded-xl'>
+                <img className='w-6 h-6' src={user.icon} alt={user.icon} />
+                <div>
+                  <p className='text-neutral-600'><span className='text-lg text-[#244D3F] font-bold'>{user.catagory}</span> with {user.name}</p>
+                  <p className='text-neutral-600'>{user?.time}</p>
+                </div>
+              </div>
+            </div>
+          </div>))}
+      </div>
     </div>
   )
 }
