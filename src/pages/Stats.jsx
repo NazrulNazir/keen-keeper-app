@@ -21,7 +21,7 @@ function Stats() {
     <div className='px-20 mb-10'>
       <h1 className='text-4xl font-bold text-neutral-800 mt-10 mb-5'>Friendship Analytics</h1>
 
-      <div className=' bg-base-100 px-10 py-8'>
+      <div className=' bg-base-100 px-10 py-8 rounded-xl'>
         <h3 className='text-2xl font-bold text-[#244d3f]'>By Interaction Type</h3>
         <div className='flex flex-col justify-center items-center'>
           <PieChart
