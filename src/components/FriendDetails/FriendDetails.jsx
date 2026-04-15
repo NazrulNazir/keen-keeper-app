@@ -4,11 +4,16 @@ import { PiArchiveBold, PiVideoCameraBold } from 'react-icons/pi';
 import { RiDeleteBinLine, RiNotificationSnoozeLine } from 'react-icons/ri';
 import { TbPhoneCall } from 'react-icons/tb';
 import { useLoaderData } from 'react-router';
+import { toast } from 'react-toastify';
 
 const FriendDetails = () => {
     const friend = useLoaderData();
     const { name, email, bio, status, goal, next_due_date, picture, tags, days_since_contact } = friend;
-    console.log(friend)
+    console.log(friend);
+
+    const handleClick = () => {
+        toast.success(` Call with ${name}  🎉`);
+    };
     return (
         <div className='px-5 md:px-10 lg:px-20 mt-10'>
             <div className='grid grid-cols-18 grid-rows-2  gap-5 mb-5'>
@@ -56,18 +61,18 @@ const FriendDetails = () => {
                 <div className='grid grid-col-1 grid-rows-3 col-span-18 md:col-span-9 md:row-span-2 lg:col-span-12 bg-base-100 rounded-xl px-4'>
                     <p className='text-green-950 text-xl font-bold row-span-1 mt-2'>Quick Check-In</p>
                     <div className='grid grid-cols-3 gap-3 justify-center items-center text-center row-span-2 mb-3'>
-                        <div className='bg-base-300 h-full rounded-lg flex flex-col justify-center py-8 md:py-0'>
+                        <button onClick={handleClick} className='cursor-pointer bg-base-300 h-full rounded-lg flex flex-col justify-center py-8 md:py-0'>
                             <h3 className='mx-auto text-2xl text-neutral-800 mb-2'><TbPhoneCall /></h3>
                             <p>Call</p>
-                        </div>
-                        <div className='bg-base-300 h-full rounded-lg flex flex-col justify-center'>
+                        </button>
+                        <button onClick={()=> (toast.success(`Text with ${name}`))} className='cursor-pointer bg-base-300 h-full rounded-lg flex flex-col justify-center'>
                             <h3 className='mx-auto text-2xl text-neutral-800 mb-2'><MdOutlineTextsms /></h3>
                             <p>Text</p>
-                        </div>
-                        <div className='bg-base-300 h-full rounded-lg flex flex-col justify-center'>
+                        </button>
+                        <button onClick={()=> (toast.success(`Video with ${name}`))} className='cursor-pointer bg-base-300 h-full rounded-lg flex flex-col justify-center'>
                             <h3 className='mx-auto text-2xl text-neutral-800 mb-2'><PiVideoCameraBold /></h3>
                             <p>Video</p>
-                        </div>
+                        </button>
                     </div>
                 </div>
             </div>
