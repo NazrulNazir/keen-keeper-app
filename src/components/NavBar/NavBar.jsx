@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router'
+import { Link, NavLink } from 'react-router'
 import { AiOutlineHome } from "react-icons/ai";
 import { LuClock4 } from "react-icons/lu";
 import { PiChartLineLight } from "react-icons/pi";
@@ -9,7 +9,7 @@ const NavBar = () => {
         <div className='shadow-sm bg-base-100 sticky top-0 z-50'>
             <div className="navbar bg-base-100 container mx-auto">
                 <div className="flex-1">
-                    <button className="text-xl sm:text-3xl font-bold">Keen<span className='text-green-900'>Keeper</span></button>
+                    <Link to={'/'} className="text-xl sm:text-3xl font-bold">Keen<span className='text-green-900'>Keeper</span></Link>
                 </div>
                 <div className="flex-none">
                     <ul className="menu menu-horizontal px-1 text-md sm:text-lg font-semibold text-neutral-600">

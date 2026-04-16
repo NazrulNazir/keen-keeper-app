@@ -4,15 +4,6 @@ import { WiMoonFull } from 'react-icons/wi';
 import { Pie, PieChart, Tooltip } from 'recharts';
 import { UserContext } from '../context/UserContext';
 
-// Sample data
-// const data01 = [
-//   { name: 'Group A', value: 400 },
-//   { name: 'Group B', value: 300 },
-//   { name: 'Group C', value: 300 },
-//   { name: 'Group D', value: 200 },
-// ];
-
-
 
 function Stats() {
 
@@ -26,7 +17,7 @@ function Stats() {
   ];
 
   return (
-    <div className='px-20 mb-10'>
+    <div className='px-5 sm:px-10 lg:px-20 mb-10'>
       <h1 className='text-4xl font-bold text-neutral-800 mt-10 mb-5'>Friendship Analytics</h1>
 
       <div className=' bg-base-100 px-10 py-8 rounded-xl'>

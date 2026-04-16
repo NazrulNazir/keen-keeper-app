@@ -16,7 +16,7 @@ const Timeline = () => {
 
 
   return (
-    <div className='px-5 md:px-10 lg:px-20 my-10'>
+    <div className={`px-5 md:px-10 lg:px-20 my-10 ${filters.length === 0 && 'h-[60vh]'}`}>
       <h1 className='text-5xl font-semibold'>Timeline</h1>
       <div className='my-5'>
         <select defaultValue="Color scheme" className="select select-base-300">

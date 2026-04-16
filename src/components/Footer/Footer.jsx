@@ -1,16 +1,16 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 const Footer = () => {
     return (
-        <footer className="footer footer-horizontal footer-center bg-[#244d3f] text-base-100 rounded p-10">
-            <nav className="grid grid-flow-col gap-4">
-                <a className="link link-hover">About us</a>
-                <a className="link link-hover">Contact</a>
-                <a className="link link-hover">Jobs</a>
-                <a className="link link-hover">Press kit</a>
-            </nav>
+        <footer className="flex flex-col justify-center text-center gap-8 bg-[#244d3f] text-base-100 rounded py-10 px-5 sm:px-10 lg:px-20">
+            <div>
+                <h1 className='text-4xl md:text-6xl font-bold mb-3'>KeenKeeper</h1>
+                <p>Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.</p>
+            </div>
             <nav>
-                <div className="grid grid-flow-col gap-4">
+                <p className='text-xl mb-2'>Social Links</p>
+                <div className="flex justify-center gap-4">
                     <a>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -46,8 +46,16 @@ const Footer = () => {
                     </a>
                 </div>
             </nav>
-            <aside>
-                <p>Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd</p>
+            <hr className='footer-hr'/>
+            <aside className=''>
+                <div className='sm:flex justify-between'>
+                    <small>© 2026 KeenKeeper. All rights reserved.</small>
+                    <div className='flex gap-4 mt-3 justify-center'>
+                        <Link>Privacy Policy</Link>
+                        <Link>Terms of Service</Link>
+                        <Link>Cookies</Link>
+                    </div>
+                </div>
             </aside>
         </footer>
     )

@@ -1,4 +1,4 @@
-import { StrictMode } from 'react'
+import { StrictMode, Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
@@ -10,16 +10,25 @@ import Timeline from './pages/Timeline.jsx';
 import Stats from './pages/Stats.jsx';
 import FriendDetails from './components/FriendDetails/FriendDetails.jsx';
 import { ToastContainer } from 'react-toastify';
+import Error from './components/Error/Error.jsx';
+
+const friedsPromise = fetch('/friends.json').then(res => res.json());
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <Error />,
     children: [
       {
         index: true,
-        loader: () => fetch('friends.json'),
-        Component: Home
+        element: (
+          <Suspense fallback={<div className='flex flex-col justify-center items-center h-[80vh]'>
+            <span className="loading loading-spinner loading-xl text-neutral"></span>
+          </div>}>
+            <Home friedsPromise={friedsPromise}></Home>
+          </Suspense>
+        )
       },
       {
         path: `/:friendId`,

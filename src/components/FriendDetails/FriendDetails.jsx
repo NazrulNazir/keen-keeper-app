@@ -92,9 +92,15 @@ const FriendDetails = () => {
             </div>
             <div className='grid grid-cols-18 grid-rows-2  gap-5 mb-15'>
                 <div className='col-span-18 md:col-span-9 lg:col-span-6 sm:row-span-2 rounded-xl flex flex-col gap-2'>
-                    <div className='py-5 bg-base-100 rounded-xl text-center flex justify-center items-center gap-1.5'><RiNotificationSnoozeLine /> Snooze 2 weeks</div>
-                    <div className='py-5 bg-base-100 rounded-xl text-center flex justify-center items-center gap-1.5'><PiArchiveBold /> Archive</div>
-                    <div className='py-5 bg-base-100 rounded-xl text-center flex justify-center items-center gap-1.5 text-red-600' ><RiDeleteBinLine /> Delete</div>
+                    <button onClick={()=> {
+                        toast.success(`Snooze 2 weeks.. 🎉`);
+                    }} className='py-5 cursor-pointer hover:bg-gray-300 bg-base-100 rounded-xl text-center flex justify-center items-center gap-1.5'><RiNotificationSnoozeLine /> Snooze 2 weeks</button>
+                    <button onClick={()=> {
+                        toast.error(`Add to Archive.. 🎉`);
+                    }} className='py-5 cursor-pointer hover:bg-gray-300 bg-base-100 rounded-xl text-center flex justify-center items-center gap-1.5'><PiArchiveBold /> Archive</button>
+                    <button onClick={()=> {
+                        toast.error(`Successfully Delete.. 🎉`);
+                    }} className='py-5 cursor-pointer hover:bg-gray-300 bg-base-100 rounded-xl text-center flex justify-center items-center gap-1.5 text-red-600' ><RiDeleteBinLine /> Delete</button>
                 </div>
                 <div className='grid grid-col-1 grid-rows-3 col-span-18 md:col-span-9 md:row-span-2 lg:col-span-12 bg-base-100 rounded-xl px-4'>
                     <p className='text-green-950 text-xl font-bold row-span-1 mt-2'>Quick Check-In</p>
