@@ -6,7 +6,7 @@ import { PiChartLineLight } from "react-icons/pi";
 
 const NavBar = () => {
     return (
-        <div className='shadow-sm bg-base-100'>
+        <div className='shadow-sm bg-base-100 sticky top-0 z-50'>
             <div className="navbar bg-base-100 container mx-auto">
                 <div className="flex-1">
                     <button className="text-xl sm:text-3xl font-bold">Keen<span className='text-green-900'>Keeper</span></button>

@@ -1,6 +1,8 @@
+import { useContext } from 'react';
 import { DiVim } from 'react-icons/di';
 import { WiMoonFull } from 'react-icons/wi';
 import { Pie, PieChart, Tooltip } from 'recharts';
+import { UserContext } from '../context/UserContext';
 
 // Sample data
 // const data01 = [
@@ -10,13 +12,19 @@ import { Pie, PieChart, Tooltip } from 'recharts';
 //   { name: 'Group D', value: 200 },
 // ];
 
-const data02 = [
-  { name: 'text', value: 300, fill: '#244d3f' },
-  { name: 'call', value: 300, fill: '#7f37f5' },
-  { name: 'video', value: 300, fill: '#37a163' }
-];
+
 
 function Stats() {
+
+  const { allData } = useContext(UserContext);
+  const { count } = allData;
+
+  const data02 = [
+    { name: 'call', value: count.totalCall, fill: '#244d3f' },
+    { name: 'text', value: count.totalText, fill: '#7f37f5' },
+    { name: 'video', value: count.totalVideo, fill: '#37a163' }
+  ];
+
   return (
     <div className='px-20 mb-10'>
       <h1 className='text-4xl font-bold text-neutral-800 mt-10 mb-5'>Friendship Analytics</h1>
@@ -44,9 +52,15 @@ function Stats() {
             <Tooltip />
           </PieChart>
           <div className='flex gap-5'>
-            <div className='flex items-center gap-1'><span className='text-[#244d3f]'><WiMoonFull /></span> <span>Text</span></div>
-            <div className='flex items-center gap-1 '><span className='text-[#7f37f5]'><WiMoonFull /></span> <span>Call</span></div>
-            <div className='flex items-center gap-1 '><span className='text-[#37a163]'><WiMoonFull /></span> <span>Video</span></div>
+            <div className='flex items-center gap-1 '>
+              <span className='text-[#7f37f5]'><WiMoonFull /></span> <span>Text</span>
+            </div>
+            <div className='flex items-center gap-1'>
+              <span className='text-[#244d3f]'><WiMoonFull /></span> <span>Call</span>
+            </div>
+            <div className='flex items-center gap-1 '>
+              <span className='text-[#37a163]'><WiMoonFull /></span> <span>Video</span>
+            </div>
           </div>
         </div>
       </div>

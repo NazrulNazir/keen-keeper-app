@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { MdOutlineTextsms } from 'react-icons/md';
 import { PiArchiveBold, PiVideoCameraBold } from 'react-icons/pi';
 import { RiDeleteBinLine, RiNotificationSnoozeLine } from 'react-icons/ri';
@@ -9,6 +9,7 @@ import { UserContext } from '../../context/UserContext';
 
 const FriendDetails = () => {
     const { allData } = useContext(UserContext);
+    const users = allData.userData;
     const friend = useLoaderData();
     const { name, email, bio, status, goal, next_due_date, picture, tags, days_since_contact } = friend;
 
@@ -24,11 +25,33 @@ const FriendDetails = () => {
 
         allData.userFun({
             name,
-            catagory: 'Meetup',
+            catagory: 'Call',
             time: time,
             icon: './assets/call.png'
         });
     };
+
+    // pi chart show count
+
+    const { communicationCountFun } = allData;
+
+    const callCount = users.filter(usr => usr.catagory === 'Call');
+    const textCount = users.filter(usr => usr.catagory === 'Text');
+    const videoCount = users.filter(usr => usr.catagory === 'Video');
+
+    const totalCall = callCount.length;
+    const totalText = textCount.length;
+    const totalVideo = videoCount.length;
+
+    useEffect(() => {
+        communicationCountFun({
+            'totalCall': totalCall,
+            'totalText': totalText,
+            'totalVideo': totalVideo
+        });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [totalCall, totalText, totalVideo]);
+
     return (
         <div className='px-5 md:px-10 lg:px-20 mt-10'>
             <div className='grid grid-cols-18 grid-rows-2  gap-5 mb-5'>
