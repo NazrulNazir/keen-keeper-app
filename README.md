@@ -47,7 +47,7 @@ Follow these steps to run the project locally:
 
 ```bash
 # Clone the repository
-git clone https://github.com/NazrulNazir/keenkepper.git
+git clone https://github.com/NazrulNazir/keen-keeper-app.git
 
 
 # Go to project folder
