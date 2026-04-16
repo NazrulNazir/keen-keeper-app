@@ -63,7 +63,7 @@ npm run dev
 
 ## 🌐 Live Demo
 
-🔗 Live Site: *(Add your Netlify/Vercel link here)*
+🔗 Live Site: https://shimmering-jelly-f89f3e.netlify.app/
 
 ---
 

@@ -3,9 +3,9 @@ import { Link } from 'react-router'
 
 const Footer = () => {
     return (
-        <footer className="flex flex-col justify-center text-center gap-8 bg-[#244d3f] text-base-100 rounded py-10 px-5 sm:px-10 lg:px-20">
+        <footer className="flex flex-col justify-center text-center gap-8 bg-[#244d3f] text-base-100 rounded py-15 px-5 sm:px-10 lg:px-20">
             <div>
-                <h1 className='text-4xl md:text-6xl font-bold mb-3'>KeenKeeper</h1>
+                <h1 className='text-5xl md:text-6xl font-bold mb-6 md:mb-3'>KeenKeeper</h1>
                 <p>Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.</p>
             </div>
             <nav>

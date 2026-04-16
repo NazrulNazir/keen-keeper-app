@@ -27,7 +27,7 @@ const FriendDetails = () => {
             name,
             catagory: 'Call',
             time: time,
-            icon: './assets/call.png'
+            icon: '/images/call.png'
         });
     };
 
@@ -119,7 +119,7 @@ const FriendDetails = () => {
                                     name,
                                     catagory: 'Text',
                                     time: time,
-                                    icon: './assets/text.png'
+                                    icon: '/images/text.png'
                                 });
                             }} className='cursor-pointer bg-base-300 h-full rounded-lg flex flex-col justify-center'>
                             <h3 className='mx-auto text-2xl text-neutral-800 mb-2'><MdOutlineTextsms /></h3>
@@ -133,7 +133,7 @@ const FriendDetails = () => {
                                     name,
                                     catagory: 'Video',
                                     time: time,
-                                    icon: './assets/video.png'
+                                    icon: '/images/video.png'
                                 });
                             }} className='cursor-pointer bg-base-300 h-full rounded-lg flex flex-col justify-center'>
                             <h3 className='mx-auto text-2xl text-neutral-800 mb-2'><PiVideoCameraBold /></h3>
