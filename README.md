@@ -49,6 +49,7 @@ Follow these steps to run the project locally:
 # Clone the repository
 git clone https://github.com/NazrulNazir/keenkepper.git
 
+
 # Go to project folder
 cd keen-kepper-app
 
@@ -64,6 +65,7 @@ npm run dev
 ## 🌐 Live Demo
 
 🔗 Live Site: https://shimmering-jelly-f89f3e.netlify.app/
+
 
 ---
 
