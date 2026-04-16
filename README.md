@@ -1,16 +1,73 @@
-# React + Vite
+# 🧠 KeenKeeper
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**KeenKeeper** is a personal relationship management web application that helps users keep track of meaningful friendships and maintain strong connections. It allows users to manage friend information, monitor relationship status, and visualize interaction data through a clean and user-friendly dashboard.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Technologies Used
 
-## React Compiler
+* ⚛️ **React.js** — Frontend library for building UI
+* 🎨 **Tailwind CSS** — Utility-first CSS framework
+* 🌼 **DaisyUI** — Prebuilt Tailwind UI components
+* 🔔 **React Toastify** — Notification system for alerts and messages
+* 📊 **Recharts** — Data visualization and charts
+* 📦 **JavaScript (ES6+)**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## ✨ Key Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 👥 Friend Management
+
+Add and manage friend profiles with important details like name, email, and profile picture.
+
+### 📊 Interactive Dashboard
+
+Visualize friend data using charts and statistics powered by **Recharts**.
+
+### 🔔 Smart Notifications
+
+Display success and alert messages using **React Toastify** for better user feedback.
+
+### 📈 Relationship Tracking
+
+Track interaction status such as **On Track** and **Need Attention** to maintain meaningful relationships.
+
+---
+
+## 🎯 Project Purpose
+
+The goal of **KeenKeeper** is to help users **stay connected with important people** by organizing and tracking their relationships in a simple and visually appealing interface.
+
+---
+
+## 📂 Installation & Setup
+
+Follow these steps to run the project locally:
+
+```bash
+# Clone the repository
+git clone https://github.com/NazrulNazir/keenkepper.git
+
+# Go to project folder
+cd keen-kepper-app
+
+# Install dependencies
+npm install
+
+# Run the development server
+npm run dev
+```
+
+---
+
+## 🌐 Live Demo
+
+🔗 Live Site: *(Add your Netlify/Vercel link here)*
+
+---
+
+## 👨‍💻 Author
+
+**Nazrul Nazir**
+Frontend Web Developer 🚀
